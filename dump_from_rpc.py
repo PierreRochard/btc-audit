@@ -17,7 +17,7 @@ height = 0
 
 while True:
     data = proxy_connection.call('gettxoutsetinfo', 'none', height, True)
-    print(data)
+    print(height)
     data = flatten_dict(data)
     with open(os.path.expanduser('~/src/btc-audit/btc_audit_data_v2.csv'), 'a', newline='') as csvfile:
         writer = DictWriter(csvfile, fieldnames=data.keys())
